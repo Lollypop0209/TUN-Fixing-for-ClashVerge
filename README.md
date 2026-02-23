@@ -119,6 +119,3 @@ $rootFolder.RegisterTaskDefinition($TaskName, $taskDefinition, 6, $null, $null, 
 
 ---
 
-这个文档已经涵盖了我们讨论的所有精华。如果你觉得以后可能会在不同的电脑上用到，可以把这些文件一起打包存放。
-
-**还需要我为你把这段内容转换成可以直接下载的 `.txt` 或 `.ps1` 文件内容吗？**
