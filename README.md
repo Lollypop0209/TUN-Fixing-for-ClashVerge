@@ -1,28 +1,24 @@
-网卡共享重置法（针对 Windows 系统的常见 Bug）
-原因：Windows 系统的网络路由转发状态可能会在开启 TUN 模式时卡死，导致流量无法正常穿透虚拟网卡，此时日志中常出现 DNS 解析错误。
-操作步骤：
+在 Clash Verge（或 Clash Verge Rev）中开启 TUN（虚拟网卡）模式后，如果出现无法联网、节点连接超时等问题，通常是由系统的网络路由冲突、虚拟网卡识别错误或 DNS 解析失败引起的。以下是几个常见且有效的解决方法及相关的参考网页链接：
 
-在 Clash Verge 中开启服务模式（Service Mode）和 TUN 模式。
+### 解决方案 ：网卡共享重置法（针对 Windows 系统的常见 Bug）
 
-进入 Windows 的“控制面板” -> “网络和 Internet” -> “网络和共享中心” -> “更改适配器设置”。
+**原因**：Windows 系统的网络路由转发状态可能会在开启 TUN 模式时卡死，导致流量无法正常穿透虚拟网卡，此时日志中常出现 DNS 解析错误。
+**操作步骤**：
 
-找到主物理网卡（例如 WLAN 或 以太网）或 Clash 的虚拟网卡（名称通常为 Mihomo 或 Clash TUN）。
-
-右键点击该网卡 -> 选择“属性” -> 切换到“共享”选项卡。
-
-勾选“允许其他网络用户通过此计算机的 Internet 连接来连接”，点击“确定”。
-
-再次打开该网卡的“属性” -> “共享”，取消勾选刚才的选项，再次点击“确定”。
+1. 在 Clash Verge 中开启服务模式（Service Mode）和 TUN 模式。
+2. 进入 Windows 的“控制面板” -> “网络和 Internet” -> “网络和共享中心” -> “更改适配器设置”。
+3. 找到主物理网卡（例如 WLAN 或 以太网）或 Clash 的虚拟网卡（名称通常为 Mihomo 或 Clash TUN）。
+4. 右键点击该网卡 -> 选择“属性” -> 切换到“共享”选项卡。
+5. 勾选“允许其他网络用户通过此计算机的 Internet 连接来连接”，点击“确定”。
+6. 再次打开该网卡的“属性” -> “共享”，**取消勾选**刚才的选项，再次点击“确定”。
 经历一次开启再关闭共享的操作后，底层路由通常会重置，TUN 模式即可恢复正常的网络连接。
 
-参考链接：
-
-GitHub Issue #244: Tun模式启动后无法连接外网，在适配器里勾选再取消网络共享后恢复正常
-
-GitHub Issue #1490: 开启服务模式和TUN模式后，电脑断网
+* **参考链接**：
+* [GitHub Issue #244: Tun模式启动后无法连接外网，在适配器里勾选再取消网络共享后恢复正常](https://github.com/clash-verge-rev/clash-verge-rev/issues/244)
+* [GitHub Issue #1490: 开启服务模式和TUN模式后，电脑断网](https://github.com/clash-verge-rev/clash-verge-rev/issues/1490)
 
 
-# TUN-Fixing-for-ClashVerge
+
 
 ---
 
