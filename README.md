@@ -1,5 +1,4 @@
 # TUN-Fixing-for-ClashVerge
-没问题，这套流程是我们经过多次“实战演习”打磨出来的最终版本。我为你整理了一份完整的 Markdown 文档，你可以将其保存为 `README.md` 放在工具文件夹里。
 
 ---
 
